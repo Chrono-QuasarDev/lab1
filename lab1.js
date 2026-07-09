@@ -1,4 +1,15 @@
-const scores = [2, 20, 21, 22, 23, 30, 48, 49, 50, 55, 60, 65, 72, 63, 76, 80, 68, 90, 85, 98];
+const input = prompt("Enter multiple numbers seperated by spaces.");
+let scores = [];
+
+if (input) {
+  scores = input.split(" ")
+        .map(str => str.trim())
+        .filter(str => str !== "")
+        .map(Number)
+        .filter(str => !isNaN(str));
+} else {
+  alert("No input provided");
+}
 const len = scores.length;
 
 // Search for the minimum grade
@@ -64,9 +75,9 @@ for (let row = maxHeight; row >= 1; row--) {
 
   for (let bucket = 0; bucket < stats.length; bucket++) {
     if (stats[bucket] >= row) {
-      line += "####### ";
+      line += "#######   ";
     } else {
-      line += "        ";
+      line += "          ";
     }
   }
 
@@ -74,4 +85,4 @@ for (let row = maxHeight; row >= 1; row--) {
 }
 
 console.log("+-----------+---------+---------+---------+---------+");
-console.log("I 0-20 I 21-40 I 41-60 I 61-80 I 81-100 I");
+console.log("I   0-20    I  21-40  I  41-60  I  61-80  I 81-100  I");
